@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://12nd32sosadk" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="11_rvswv"]
 [ext_resource type="Texture2D" uid="uid://c2mh4hh5c77jk" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Base-01.png" id="12_boyg6"]
 [ext_resource type="Texture2D" uid="uid://bfjurkyjdjbj3" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Dark-Tree.png" id="13_e36ub"]
+[ext_resource type="PackedScene" uid="uid://b1oilxyj8np7p" path="res://scenes/killzone.tscn" id="14_215e1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eow3j"]
 texture = ExtResource("2_fc0e3")
@@ -15301,7 +15302,10 @@ sources/13 = SubResource("TileSetAtlasSource_f1jbl")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b2p8l"]
 normal = Vector2(1, 0)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_be4hw"]
+
 [node name="Game" type="Node" unique_id=38633801]
+metadata/_edit_vertical_guides_ = [-614.0]
 
 [node name="player" parent="." unique_id=2057461835 instance=ExtResource("1_80nbo")]
 position = Vector2(-218, -27)
@@ -15312,7 +15316,7 @@ zoom = Vector2(2, 2)
 limit_left = -333
 limit_top = -9999999
 limit_right = 9999967
-limit_bottom = 10000001
+limit_bottom = 150
 position_smoothing_enabled = true
 
 [node name="TileMap" type="TileMap" parent="." unique_id=5656379]
@@ -15338,3 +15342,10 @@ position = Vector2(-300, -54)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=633955169]
 shape = SubResource("WorldBoundaryShape2D_b2p8l")
+
+[node name="killzone" parent="." unique_id=546331401 instance=ExtResource("14_215e1")]
+position = Vector2(12, 195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=45163676]
+position = Vector2(13, 0)
+shape = SubResource("WorldBoundaryShape2D_be4hw")
