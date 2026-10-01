@@ -353,7 +353,7 @@ position = Vector2(11, -16)
 sprite_frames = SubResource("SpriteFrames_be4hw")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.6125207
+frame_progress = 0.22634701
 
 [node name="hitbox" type="Area2D" parent="." unique_id=1415161495]
 collision_mask = 2
