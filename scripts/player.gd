@@ -9,9 +9,11 @@ extends CharacterBody2D
 @export_range(0, 1) var decelerate_on_jump_release = 0.5
 
 var is_dead: bool = false
+var attacking : bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: HitBox = $HitBox
+
 
 
 func _physics_process(delta: float) -> void:
@@ -28,6 +30,9 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_released("Jump") and velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
+		
+	if Input.is_action_pressed("attack"):
+		attacking = true
 
 	var direction := Input.get_axis("move_left", "move_right")
 	
@@ -44,6 +49,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.play("jump")
 	
+	if attacking == true:
+		animated_sprite.play("attack")
 	
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
@@ -51,12 +58,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed * deceleration)
 
 	move_and_slide()
-	
-	
+
+
 func _on_hurt_box_died() -> void:
 	animated_sprite.play("Dead")
-	
-	
+
+
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if not animated_sprite: return
 	
