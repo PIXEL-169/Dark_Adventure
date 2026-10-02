@@ -346,8 +346,8 @@ animations = [{
 radius = 6.0
 height = 36.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xeke0"]
-size = Vector2(33, 45)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
+size = Vector2(30, 35)
 
 [node name="player" type="CharacterBody2D" unique_id=2057461835]
 z_index = 9
@@ -361,26 +361,25 @@ debug_color = Color(0, 0.5950001, 0.7, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=392249597]
 sprite_frames = SubResource("SpriteFrames_be4hw")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
 
 [node name="HurtBox" parent="." unique_id=1716629274 instance=ExtResource("7_1jxqw")]
-position = Vector2(50, 8)
+position = Vector2(0, -25)
+collision_mask = 2
 
 [node name="HurtBox Collision" type="CollisionShape2D" parent="HurtBox" unique_id=1763820971]
-position = Vector2(-48, -4)
+position = Vector2(1, 29)
 shape = SubResource("CapsuleShape2D_vmtmt")
-debug_color = Color(0, 0.6405922, 0.35229322, 0.41960785)
+debug_color = Color(2.8878452e-07, 0.6457118, 0.23007405, 0.41960785)
 
 [node name="HitBox" parent="." unique_id=1205405222 instance=ExtResource("8_dw050")]
-visible = false
+collision_mask = 2
 
-[node name="HitBox Collision" type="CollisionShape2D" parent="HitBox" unique_id=1188589351]
-position = Vector2(23.5, 4)
-shape = SubResource("RectangleShape2D_xeke0")
-debug_color = Color(1, 0.06999999, 0.31799978, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1126960862]
+position = Vector2(23, 5.5)
+shape = SubResource("RectangleShape2D_be4hw")
+debug_color = Color(0.93225557, 0.19648284, 0.44056606, 0.41960785)
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="died" from="HurtBox" to="." method="_on_hurt_box_died"]

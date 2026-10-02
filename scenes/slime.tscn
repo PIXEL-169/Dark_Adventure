@@ -127,6 +127,7 @@ animation = &"hurted"
 autoplay = "move"
 
 [node name="HurtBox" parent="." unique_id=1716629274 instance=ExtResource("3_n6pvg")]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=384873111]
 position = Vector2(0, 6)
