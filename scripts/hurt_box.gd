@@ -8,6 +8,7 @@ signal died()
 
 func get_damage(value: int):
 	healthPoints -= value
+	print(healthPoints)
 	
 	hurted.emit()
 	

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://q2hcj4rnv7oo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/slime_green.png" id="1_371uh"]
 [ext_resource type="Script" uid="uid://deydr4smmditr" path="res://scripts/slime.gd" id="1_p2gj0"]
 [ext_resource type="PackedScene" uid="uid://cboml80sjydqk" path="res://scenes/hurt_box.tscn" id="3_n6pvg"]
+[ext_resource type="PackedScene" uid="uid://cbuidcq7t0qr" path="res://scenes/hit_box.tscn" id="4_pjw23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
 size = Vector2(14, 12)
@@ -112,6 +113,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmtmt"]
 size = Vector2(14, 12)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2p8l"]
+size = Vector2(16, 17)
+
 [node name="Slime" type="CharacterBody2D" unique_id=130847083]
 z_index = 1
 script = ExtResource("1_p2gj0")
@@ -127,12 +131,21 @@ animation = &"hurted"
 autoplay = "move"
 
 [node name="HurtBox" parent="." unique_id=1716629274 instance=ExtResource("3_n6pvg")]
-collision_layer = 2
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=384873111]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_vmtmt")
 debug_color = Color(2.7915835e-06, 0.65820265, 0.31776607, 0.41960785)
+
+[node name="HitBox" parent="." unique_id=1205405222 instance=ExtResource("4_pjw23")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=226328854]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_b2p8l")
+debug_color = Color(0.9971555, 0, 0.18161646, 0.41960785)
 
 [connection signal="died" from="HurtBox" to="." method="_on_hurt_box_died"]
 [connection signal="hurted" from="HurtBox" to="." method="_on_hurt_box_hurted"]

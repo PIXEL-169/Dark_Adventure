@@ -8,12 +8,19 @@ extends CharacterBody2D
 @export var jump_force = -400.0
 @export_range(0, 1) var decelerate_on_jump_release = 0.5
 
+var hit_frame_start: int = 1
+var hit_frame_end: int = 6
+
 var is_dead: bool = false
 var attacking : bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: HitBox = $HitBox
+@onready var hit_box_collision: CollisionShape2D = $HitBox/CollisionShape2D
 
+func _ready() -> void:
+	hit_box_collision.disabled = true
+	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 
 func _physics_process(delta: float) -> void:
@@ -31,8 +38,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("Jump") and velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
 		
-	if Input.is_action_pressed("attack"):
-		attacking = true
+	if Input.is_action_just_pressed("attack"):
+		start_attack()
 
 	var direction := Input.get_axis("move_left", "move_right")
 	
@@ -41,16 +48,14 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
+	if not attacking:
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite.play("idle")
+			else:
+				animated_sprite.play("run")
 		else:
-			animated_sprite.play("run")
-	else:
-		animated_sprite.play("jump")
-	
-	if attacking == true:
-		animated_sprite.play("attack")
+			animated_sprite.play("jump")
 	
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
@@ -60,18 +65,27 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_hurt_box_died() -> void:
-	animated_sprite.play("Dead")
-
+func start_attack() -> void:
+	attacking = true
+	animated_sprite.play("attack")
 
 func _on_animated_sprite_2d_frame_changed() -> void:
-	if not animated_sprite: return
+	if animated_sprite == null:
+		return
+	if animated_sprite.animation != "attack":
+		return
+	var active := animated_sprite.frame >= hit_frame_start and animated_sprite.frame <= hit_frame_end
+	hit_box_collision.set_deferred("disabled", not active)
 	
-	var attackAnimation = animated_sprite.animation == "attack"
-	var frame = animated_sprite.frame
-	
-	if attackAnimation:
-		if frame == 3:
-			hit_box.set_active(true)
-		elif frame == 5:
-			hit_box.set_active(false)
+func _on_animation_finished() -> void:
+	if animated_sprite.animation == "attack":
+		attacking = false
+		hit_box_collision.set_deferred("disabled", true)
+
+func _on_hurt_box_died() -> void:
+	is_dead = true
+	animated_sprite.play("Dead")
+
+func _on_timer_timeout() -> void:
+	Engine.time_scale = 1
+	get_tree().reload_current_scene()
