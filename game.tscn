@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c2mh4hh5c77jk" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Base-01.png" id="12_boyg6"]
 [ext_resource type="Texture2D" uid="uid://bfjurkyjdjbj3" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Dark-Tree.png" id="13_e36ub"]
 [ext_resource type="PackedScene" uid="uid://b1oilxyj8np7p" path="res://scenes/killzone.tscn" id="14_215e1"]
-[ext_resource type="PackedScene" uid="uid://d2gk36r4romuq" path="res://scenes/slime.tscn" id="15_7sc4i"]
+[ext_resource type="PackedScene" uid="uid://d2gk36r4romuq" path="res://scenes/Enemy.tscn" id="15_7sc4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eow3j"]
 texture = ExtResource("2_fc0e3")
@@ -15314,7 +15314,7 @@ normal = Vector2(1, 0)
 metadata/_edit_vertical_guides_ = [-614.0]
 
 [node name="player" parent="." unique_id=2057461835 instance=ExtResource("1_80nbo")]
-position = Vector2(-209, -12)
+position = Vector2(-209, -37)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1666027694]
 position = Vector2(106.999985, -45)
@@ -15358,7 +15358,6 @@ position = Vector2(115, 354)
 position = Vector2(13, 0)
 shape = SubResource("WorldBoundaryShape2D_be4hw")
 
-[node name="Slime" parent="." unique_id=990883992 instance=ExtResource("15_7sc4i")]
+[node name="Enemy" parent="." unique_id=130847083 instance=ExtResource("15_7sc4i")]
 z_index = 5
-position = Vector2(108, -26)
-scale = Vector2(2, 2)
+position = Vector2(41, -76)
