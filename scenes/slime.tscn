@@ -2,7 +2,42 @@
 
 [ext_resource type="Texture2D" uid="uid://q2hcj4rnv7oo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/slime_green.png" id="1_371uh"]
 [ext_resource type="Script" uid="uid://deydr4smmditr" path="res://scripts/slime.gd" id="1_p2gj0"]
-[ext_resource type="PackedScene" uid="uid://b1oilxyj8np7p" path="res://scenes/killzone.tscn" id="3_n6pvg"]
+[ext_resource type="PackedScene" uid="uid://cboml80sjydqk" path="res://scenes/hurt_box.tscn" id="3_n6pvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
+size = Vector2(14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd6lc"]
+atlas = ExtResource("1_371uh")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gstla"]
+atlas = ExtResource("1_371uh")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5wyi"]
+atlas = ExtResource("1_371uh")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l8pv"]
+atlas = ExtResource("1_371uh")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnioy"]
+atlas = ExtResource("1_371uh")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xjuo"]
+atlas = ExtResource("1_371uh")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a02ik"]
+atlas = ExtResource("1_371uh")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu8ps"]
+atlas = ExtResource("1_371uh")
+region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2gj0"]
 atlas = ExtResource("1_371uh")
@@ -24,6 +59,40 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fd6lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gstla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5wyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l8pv")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnioy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xjuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a02ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu8ps")
+}],
+"loop": 0,
+"name": &"hurted",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_p2gj0")
 }, {
 "duration": 1.0,
@@ -40,26 +109,29 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2p8l"]
-size = Vector2(14, 14)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmtmt"]
+size = Vector2(14, 12)
 
-[node name="Slime" type="Node2D" unique_id=990883992]
+[node name="Slime" type="CharacterBody2D" unique_id=130847083]
+z_index = 1
 script = ExtResource("1_p2gj0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1634471995]
+z_index = 1
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_be4hw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189866072]
 sprite_frames = SubResource("SpriteFrames_be4hw")
-animation = &"move"
+animation = &"hurted"
 autoplay = "move"
-frame_progress = 0.26507846
 
-[node name="killzone" parent="." unique_id=546331401 instance=ExtResource("3_n6pvg")]
+[node name="HurtBox" parent="." unique_id=1716629274 instance=ExtResource("3_n6pvg")]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="killzone" unique_id=1533768984]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_b2p8l")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=384873111]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_vmtmt")
+debug_color = Color(2.7915835e-06, 0.65820265, 0.31776607, 0.41960785)
 
-[node name="RayCastright" type="RayCast2D" parent="." unique_id=1106082873]
-target_position = Vector2(11, 0)
-
-[node name="RayCastleft" type="RayCast2D" parent="." unique_id=1085153461]
-target_position = Vector2(-11, 0)
+[connection signal="died" from="HurtBox" to="." method="_on_hurt_box_died"]
+[connection signal="hurted" from="HurtBox" to="." method="_on_hurt_box_hurted"]

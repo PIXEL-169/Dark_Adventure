@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://cu13tlpwn8231" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c2m2mchyu3g7n" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Attack-01/Attack-01-Sheet.png" id="2_sweqy"]
 [ext_resource type="Texture2D" uid="uid://bgg3dukfgre5t" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Run/Run-Sheet.png" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://cboml80sjydqk" path="res://scenes/hurt_box.tscn" id="7_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://cbuidcq7t0qr" path="res://scenes/hit_box.tscn" id="8_dw050"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2p8l"]
+radius = 6.0
+height = 36.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b88wv"]
 atlas = ExtResource("2_2hs0m")
@@ -336,33 +342,46 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hs0m"]
-radius = 7.0
-height = 42.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vmtmt"]
+radius = 6.0
+height = 36.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_be4hw"]
-radius = 7.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xeke0"]
+size = Vector2(33, 45)
 
 [node name="player" type="CharacterBody2D" unique_id=2057461835]
 z_index = 9
-collision_layer = 2
 script = ExtResource("1_onrkg")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312914040]
+z_index = 1
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_b2p8l")
+debug_color = Color(0, 0.5950001, 0.7, 0)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=392249597]
-position = Vector2(11, -16)
 sprite_frames = SubResource("SpriteFrames_be4hw")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.22634701
+frame = 7
+frame_progress = 1.0
 
-[node name="hitbox" type="Area2D" parent="." unique_id=1415161495]
-collision_mask = 2
+[node name="HurtBox" parent="." unique_id=1716629274 instance=ExtResource("7_1jxqw")]
+position = Vector2(50, 8)
 
-[node name="hitboxCollision" type="CollisionShape2D" parent="hitbox" unique_id=1087004019]
-position = Vector2(45, -22)
-shape = SubResource("CapsuleShape2D_2hs0m")
-disabled = true
+[node name="HurtBox Collision" type="CollisionShape2D" parent="HurtBox" unique_id=1763820971]
+position = Vector2(-48, -4)
+shape = SubResource("CapsuleShape2D_vmtmt")
+debug_color = Color(0, 0.6405922, 0.35229322, 0.41960785)
 
-[node name="hurtbox" type="CollisionShape2D" parent="." unique_id=1415475278]
-position = Vector2(10, -9)
-shape = SubResource("CapsuleShape2D_be4hw")
+[node name="HitBox" parent="." unique_id=1205405222 instance=ExtResource("8_dw050")]
+visible = false
+
+[node name="HitBox Collision" type="CollisionShape2D" parent="HitBox" unique_id=1188589351]
+position = Vector2(23.5, 4)
+shape = SubResource("RectangleShape2D_xeke0")
+debug_color = Color(1, 0.06999999, 0.31799978, 0.41960785)
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="died" from="HurtBox" to="." method="_on_hurt_box_died"]
+[connection signal="hurted" from="HurtBox" to="." method="_on_hurt_box_hurted"]
