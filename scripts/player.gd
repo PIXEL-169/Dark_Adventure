@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export_range(0, 1) var acceleration = 0.1 
 @export_range(0, 1) var deceleration = 0.1
 
-@export var jump_force = -400.0
+@export var jump_force = -350.0
 @export_range(0, 1) var decelerate_on_jump_release = 0.5
 
 var hit_frame_start: int = 1
