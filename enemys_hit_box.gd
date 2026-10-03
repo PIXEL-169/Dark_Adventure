@@ -13,5 +13,5 @@ func set_active(boolean: bool):
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is HurtBox:
-		area.get_damage(7.5)
+		area.get_damage(25)
 		

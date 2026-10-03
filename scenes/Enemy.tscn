@@ -246,7 +246,6 @@ shape = SubResource("RectangleShape2D_b2p8l")
 debug_color = Color(0.9584076, 0.18319514, 0.24696484, 0.41960785)
 
 [node name="EnemysHurtBox" parent="." unique_id=2011381106 instance=ExtResource("8_1i2q2")]
-collision_layer = 2
 
 [node name="hurtbox" type="CollisionShape2D" parent="EnemysHurtBox" unique_id=913361377]
 position = Vector2(-4, 32)

@@ -17167,7 +17167,7 @@ position = Vector2(26, -20)
 shape = SubResource("WorldBoundaryShape2D_be4hw")
 
 [node name="Label" type="Label" parent="." unique_id=469378704]
-z_index = 10
+z_index = 8
 offset_left = 111.0
 offset_top = -105.0
 offset_right = 378.0
