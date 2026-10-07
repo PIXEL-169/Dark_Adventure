@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dtwhhuradoiu3" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_ba0x2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
-size = Vector2(55.5, 16)
+size = Vector2(58.5, 16)
 
 [node name="platform" type="AnimatableBody2D" unique_id=2032553133]
 

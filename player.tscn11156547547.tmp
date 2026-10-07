@@ -366,6 +366,7 @@ autoplay = "idle"
 [node name="HurtBox" parent="." unique_id=1716629274 instance=ExtResource("7_1jxqw")]
 position = Vector2(0, -25)
 collision_mask = 2
+healthPoints = null
 
 [node name="HurtBox Collision" type="CollisionShape2D" parent="HurtBox" unique_id=1763820971]
 position = Vector2(1.5, 27.5)
@@ -380,11 +381,10 @@ position = Vector2(25.5, 5.5)
 shape = SubResource("RectangleShape2D_be4hw")
 debug_color = Color(0.93225557, 0.19648284, 0.44056606, 0.41960785)
 
-[node name="Timer" type="Timer" parent="." unique_id=872318745]
+[node name="Timer" type="Timer" parent="HitBox" unique_id=872318745]
 wait_time = 2.0
-one_shot = true
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="died" from="HurtBox" to="." method="_on_hurt_box_died"]
 [connection signal="hurted" from="HurtBox" to="." method="_on_hurt_box_hurted"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="HitBox/Timer" to="." method="_on_timer_timeout"]

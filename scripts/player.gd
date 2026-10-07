@@ -23,6 +23,7 @@ func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 
+
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
@@ -88,7 +89,7 @@ func _on_animation_finished() -> void:
 func _on_hurt_box_died() -> void:
 	is_dead = true
 	animated_sprite.play("Dead")
+	$Timer.start()
 
 func _on_timer_timeout() -> void:
-	Engine.time_scale = 1
 	get_tree().reload_current_scene()
