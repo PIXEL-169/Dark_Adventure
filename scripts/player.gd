@@ -56,8 +56,9 @@ func _physics_process(delta: float) -> void:
 				animated_sprite.play("run")
 		else:
 			animated_sprite.play("jump")
-	
-	if direction:
+	if attacking:
+		velocity.x = move_toward(velocity.x, 0, speed * deceleration)
+	elif direction:
 		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed * deceleration)
@@ -66,6 +67,8 @@ func _physics_process(delta: float) -> void:
 
 
 func start_attack() -> void:
+	if attacking:
+		return
 	attacking = true
 	animated_sprite.play("attack")
 

@@ -2,7 +2,7 @@ extends Area2D
 class_name EnemyHitBox
 
 func _ready() -> void:
-	set_active(false)
+	set_active(true)
 	
 func set_active(boolean: bool):
 	for child in get_children():

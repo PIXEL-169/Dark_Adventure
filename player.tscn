@@ -360,12 +360,12 @@ debug_color = Color(0, 0.5950001, 0.7, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=392249597]
 sprite_frames = SubResource("SpriteFrames_be4hw")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="HurtBox" parent="." unique_id=1716629274 instance=ExtResource("7_1jxqw")]
 position = Vector2(0, -25)
-collision_layer = 2
+collision_mask = 2
 
 [node name="HurtBox Collision" type="CollisionShape2D" parent="HurtBox" unique_id=1763820971]
 position = Vector2(1.5, 27.5)
@@ -373,6 +373,7 @@ shape = SubResource("RectangleShape2D_ido3m")
 debug_color = Color(2.8878452e-07, 0.6457118, 0.23007405, 0.41960785)
 
 [node name="HitBox" parent="." unique_id=1205405222 instance=ExtResource("8_dw050")]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1126960862]
 position = Vector2(25.5, 5.5)
