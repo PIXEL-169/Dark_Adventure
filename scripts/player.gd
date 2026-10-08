@@ -74,12 +74,16 @@ func start_attack() -> void:
 	animated_sprite.play("attack")
 
 func _on_animated_sprite_2d_frame_changed() -> void:
-	if animated_sprite == null:
-		return
-	if animated_sprite.animation != "attack":
-		return
-	var active := animated_sprite.frame >= hit_frame_start and animated_sprite.frame <= hit_frame_end
-	hit_box_collision.set_deferred("disabled", not active)
+	if not animated_sprite: return
+	
+	var attackAnimation = animated_sprite.animation == "attack"
+	var frame = animated_sprite.frame
+	
+	if attackAnimation:
+		if frame == 1:
+			hit_box.set_active(true)
+		elif frame == 6:
+			hit_box.set_active(false)
 	
 func _on_animation_finished() -> void:
 	if animated_sprite.animation == "attack":

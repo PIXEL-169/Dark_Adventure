@@ -9,9 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cboml80sjydqk" path="res://scenes/hurt_box.tscn" id="7_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://cbuidcq7t0qr" path="res://scenes/hit_box.tscn" id="8_dw050"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2p8l"]
-radius = 6.0
-height = 40.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw050"]
+size = Vector2(20, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b88wv"]
 atlas = ExtResource("2_2hs0m")
@@ -346,7 +345,7 @@ animations = [{
 size = Vector2(21, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
-size = Vector2(25, 35)
+size = Vector2(35, 35)
 
 [node name="player" type="CharacterBody2D" unique_id=2057461835]
 z_index = 9
@@ -354,8 +353,8 @@ script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312914040]
 z_index = 1
-position = Vector2(0, 4)
-shape = SubResource("CapsuleShape2D_b2p8l")
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_dw050")
 debug_color = Color(0, 0.5950001, 0.7, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=392249597]
@@ -374,9 +373,10 @@ debug_color = Color(2.8878452e-07, 0.6457118, 0.23007405, 0.41960785)
 
 [node name="HitBox" parent="." unique_id=1205405222 instance=ExtResource("8_dw050")]
 collision_mask = 2
+active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1126960862]
-position = Vector2(25.5, 5.5)
+position = Vector2(30.5, 5.5)
 shape = SubResource("RectangleShape2D_be4hw")
 debug_color = Color(0.93225557, 0.19648284, 0.44056606, 0.41960785)
 

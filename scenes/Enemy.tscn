@@ -2,24 +2,8 @@
 
 [ext_resource type="Script" uid="uid://yhebyo8co0h0" path="res://assets/FREE_Samurai 2D Pixel Art v1.2/Sprites/enemy.gd" id="1_ft8do"]
 [ext_resource type="Texture2D" uid="uid://q2hcj4rnv7oo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/slime_green.png" id="2_ft8do"]
-[ext_resource type="PackedScene" uid="uid://chifa5d8tc2x6" path="res://scenes/enemys_hit_box.tscn" id="3_n6pvg"]
-[ext_resource type="PackedScene" uid="uid://by45qxdsf25px" path="res://scenes/enemys_hurt_box.tscn" id="8_1i2q2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ft8do"]
-atlas = ExtResource("2_ft8do")
-region = Rect2(0, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ly5gv"]
-atlas = ExtResource("2_ft8do")
-region = Rect2(24, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_82o86"]
-atlas = ExtResource("2_ft8do")
-region = Rect2(48, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1gqeq"]
-atlas = ExtResource("2_ft8do")
-region = Rect2(72, 48, 24, 24)
+[ext_resource type="PackedScene" uid="uid://cboml80sjydqk" path="res://scenes/hurt_box.tscn" id="3_ft8do"]
+[ext_resource type="PackedScene" uid="uid://cbuidcq7t0qr" path="res://scenes/hit_box.tscn" id="4_5wwv6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isvm2"]
 atlas = ExtResource("2_ft8do")
@@ -36,6 +20,22 @@ region = Rect2(24, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4iqch"]
 atlas = ExtResource("2_ft8do")
 region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft8do"]
+atlas = ExtResource("2_ft8do")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly5gv"]
+atlas = ExtResource("2_ft8do")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82o86"]
+atlas = ExtResource("2_ft8do")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gqeq"]
+atlas = ExtResource("2_ft8do")
+region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wwv6"]
 atlas = ExtResource("2_ft8do")
@@ -57,23 +57,6 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ft8do")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ly5gv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_82o86")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1gqeq")
-}],
-"loop": 0,
-"name": &"damage",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_isvm2")
 }, {
 "duration": 1.0,
@@ -86,7 +69,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_4iqch")
 }],
 "loop": 0,
-"name": &"dying",
+"name": &"died",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft8do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly5gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82o86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gqeq")
+}],
+"loop": 0,
+"name": &"hurted",
 "speed": 6.0
 }, {
 "frames": [{
@@ -107,11 +107,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2p8l"]
-size = Vector2(30, 25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vja8"]
+size = Vector2(30, 39)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8heu"]
-size = Vector2(30, 23)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwav8"]
+size = Vector2(25, 35)
 
 [node name="Enemy" type="Node2D" unique_id=2086360718]
 z_index = 1
@@ -120,30 +120,24 @@ script = ExtResource("1_ft8do")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189866072]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_be4hw")
-animation = &"moving"
+animation = &"hurted"
 autoplay = "moving"
 
-[node name="EnemysHitBox" parent="." unique_id=1899533141 instance=ExtResource("3_n6pvg")]
-position = Vector2(33, 33)
+[node name="HurtBox" parent="." unique_id=1716629274 instance=ExtResource("3_ft8do")]
+position = Vector2(0, -25)
 collision_layer = 2
+healthPoints = 20
 
-[node name="hitbox" type="CollisionShape2D" parent="EnemysHitBox" unique_id=1853955776]
-position = Vector2(-33, -21.5)
-shape = SubResource("RectangleShape2D_b2p8l")
-debug_color = Color(0.9584076, 0.18319514, 0.24696484, 0.41960785)
+[node name="HurtBox Collision" type="CollisionShape2D" parent="HurtBox" unique_id=1359258366]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_1vja8")
+debug_color = Color(2.8878452e-07, 0.6457118, 0.23007405, 0.41960785)
 
-[node name="EnemysHurtBox" parent="." unique_id=2011381106 instance=ExtResource("8_1i2q2")]
+[node name="HitBox" parent="." unique_id=1205405222 instance=ExtResource("4_5wwv6")]
 collision_layer = 2
+damage = 15
 
-[node name="hurtbox" type="CollisionShape2D" parent="EnemysHurtBox" unique_id=913361377]
-position = Vector2(0, 12.5)
-shape = SubResource("RectangleShape2D_e8heu")
-debug_color = Color(0.25897262, 0.63460684, 0, 0.41960785)
-
-[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1945242383]
-target_position = Vector2(25, 0)
-collide_with_areas = true
-
-[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1282058100]
-target_position = Vector2(-25, 0)
-collide_with_areas = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1919140315]
+position = Vector2(28, 6)
+shape = SubResource("RectangleShape2D_iwav8")
+debug_color = Color(0.93225557, 0.19648284, 0.44056606, 0.41960785)
