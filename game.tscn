@@ -17186,7 +17186,7 @@ position = Vector2(-209, -37)
 jump_force = -450.0
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1666027694]
-position = Vector2(106.999985, -45)
+position = Vector2(113, -27)
 zoom = Vector2(2, 2)
 limit_left = -333
 limit_top = -9999999
@@ -17258,3 +17258,20 @@ autoplay = &"moving"
 [node name="Enemy" parent="." unique_id=2086360718 instance=ExtResource("18_rvswv")]
 z_index = 8
 position = Vector2(1755, -24)
+
+[node name="Enemy2" parent="." unique_id=1850178475 instance=ExtResource("18_rvswv")]
+z_index = 8
+position = Vector2(2472, -109)
+
+[node name="Label2" type="Label" parent="." unique_id=9589687]
+z_index = 8
+offset_left = 1295.0
+offset_top = -105.0
+offset_right = 1562.0
+offset_bottom = -82.0
+theme_override_fonts/font = ExtResource("15_7sc4i")
+theme_override_font_sizes/font_size = 13
+text = "Avoid the Enemies
+Press \"MRB\" to Attack"
+horizontal_alignment = 1
+vertical_alignment = 1

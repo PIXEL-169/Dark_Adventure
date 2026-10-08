@@ -345,7 +345,7 @@ animations = [{
 size = Vector2(21, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
-size = Vector2(35, 35)
+size = Vector2(46, 35)
 
 [node name="player" type="CharacterBody2D" unique_id=2057461835]
 z_index = 9
@@ -376,7 +376,7 @@ collision_mask = 2
 active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1126960862]
-position = Vector2(30.5, 5.5)
+position = Vector2(36, 5.5)
 shape = SubResource("RectangleShape2D_be4hw")
 debug_color = Color(0.93225557, 0.19648284, 0.44056606, 0.41960785)
 

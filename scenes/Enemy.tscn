@@ -116,6 +116,7 @@ size = Vector2(25, 35)
 [node name="Enemy" type="Node2D" unique_id=2086360718]
 z_index = 1
 script = ExtResource("1_ft8do")
+speed = 120
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189866072]
 scale = Vector2(2, 2)
@@ -138,6 +139,6 @@ collision_layer = 2
 damage = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1919140315]
-position = Vector2(28, 6)
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_iwav8")
 debug_color = Color(0.93225557, 0.19648284, 0.44056606, 0.41960785)
