@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2gk36r4romuq"]
 
-[ext_resource type="Script" uid="uid://yhebyo8co0h0" path="res://assets/FREE_Samurai 2D Pixel Art v1.2/Sprites/enemy.gd" id="1_ft8do"]
+[ext_resource type="Script" uid="uid://bmmk4nd7jujbn" path="res://enemy.gd" id="1_ft8do"]
 [ext_resource type="Texture2D" uid="uid://q2hcj4rnv7oo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/slime_green.png" id="2_ft8do"]
 [ext_resource type="PackedScene" uid="uid://cboml80sjydqk" path="res://scenes/hurt_box.tscn" id="3_ft8do"]
 [ext_resource type="PackedScene" uid="uid://cbuidcq7t0qr" path="res://scenes/hit_box.tscn" id="4_5wwv6"]
@@ -121,7 +121,7 @@ speed = 120
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189866072]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_be4hw")
-animation = &"hurted"
+animation = &"moving"
 autoplay = "moving"
 
 [node name="HurtBox" parent="." unique_id=1716629274 instance=ExtResource("3_ft8do")]

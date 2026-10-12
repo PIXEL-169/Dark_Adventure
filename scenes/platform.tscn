@@ -1,20 +1,24 @@
 [gd_scene format=3 uid="uid://bo5e5d254hgnh"]
 
-[ext_resource type="Texture2D" uid="uid://dtwhhuradoiu3" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_ba0x2"]
+[ext_resource type="Texture2D" uid="uid://ceuaw3lnalr3x" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="1_ba0x2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
-size = Vector2(58.5, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boyg6"]
+size = Vector2(27.979725, 14.013142)
 
 [node name="platform" type="AnimatableBody2D" unique_id=2032553133]
+z_index = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=234747119]
 position = Vector2(5.75, 0)
 scale = Vector2(1.2555555, 1)
 texture = ExtResource("1_ba0x2")
 region_enabled = true
-region_rect = Rect2(177.75699, 238.02565, 45.48346, 17.376266)
+region_rect = Rect2(210.35658, 193.16273, 27.89096, 17.376266)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=309152250]
-position = Vector2(5.75, 0)
-shape = SubResource("RectangleShape2D_be4hw")
+z_index = 9
+position = Vector2(6.010114, -0.99507)
+rotation = 0.0016654728
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_boyg6")
 one_way_collision = true
