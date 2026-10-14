@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cpv3rdsm8ife4"]
+
+[ext_resource type="Texture2D" uid="uid://usn3xqwk68rs" path="res://assets/cave/mainlev_build.png" id="1_0ip3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
+size = Vector2(49, 17)
+
+[node name="Cave Platform" type="AnimatableBody2D" unique_id=733124883]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314610727]
+texture = ExtResource("1_0ip3e")
+region_enabled = true
+region_rect = Rect2(959.2858, 223.65509, 48.591248, 17.843307)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1986602309]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_be4hw")
+one_way_collision = true

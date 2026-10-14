@@ -46,8 +46,10 @@ func _physics_process(delta: float) -> void:
 	
 	if direction > 0:
 		animated_sprite.flip_h = false
+		hit_box.scale.x = 1
 	elif direction < 0:
 		animated_sprite.flip_h = true
+		hit_box.scale.x = -1
 		
 	if not attacking:
 		if is_on_floor():

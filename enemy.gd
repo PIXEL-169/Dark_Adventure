@@ -1,11 +1,11 @@
 extends Node2D
-
+class_name Enemy
 
 var direction : int = 1
 var is_dead : bool = false
 var is_hurted : bool = false
 var start_x := position.x
-var patrol_distance: float = 150
+@export var patrol_distance: float = 150
 @export var speed = 150
 
 
