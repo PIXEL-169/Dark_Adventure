@@ -5,12 +5,18 @@ signal hurted()
 signal died()
 
 @export var healthPoints: int = 100
+var is_dead := false
 
-func get_damage(value: int):
+func get_damage(value: int) -> void:
+	if is_dead:
+		return
+
 	healthPoints -= value
 	print(healthPoints)
 	
-	hurted.emit()
-	
 	if healthPoints <= 0:
+		is_dead = true
+		set_deferred("monitorable", false)
 		died.emit()
+	else:
+		hurted.emit()

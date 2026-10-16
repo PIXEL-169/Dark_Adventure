@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PLAYER
 
 
 @export var speed = 250.0
@@ -93,7 +94,11 @@ func _on_animation_finished() -> void:
 		hit_box_collision.set_deferred("disabled", true)
 
 func _on_hurt_box_died() -> void:
+	if is_dead:
+		return
 	is_dead = true
+	velocity = Vector2.ZERO
+	hit_box.set_active(false)
 	animated_sprite.play("Dead")
 	$Timer.start()
 
