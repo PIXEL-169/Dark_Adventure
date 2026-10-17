@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://67lxuou5vhdp"]
+
+[ext_resource type="FontFile" uid="uid://rciewpa3bp6j" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://b0312n3mqit00" path="res://assets/coin.png" id="2_5ysmq"]
+
+[node name="HUD" type="Control" unique_id=1540975850]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=407654288]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 12.0
+offset_right = 53.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("1_oo0fn")
+theme_override_font_sizes/font_size = 14
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2142668479]
+position = Vector2(19, 19)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5ysmq")
+region_enabled = true
+region_rect = Rect2(0, 0, 15.813637, 16)
