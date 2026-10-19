@@ -1,28 +1,29 @@
 [gd_scene format=3 uid="uid://dir0sxxc0br7x"]
 
-[ext_resource type="PackedScene" uid="uid://dq5g6xe000gds" path="res://player.tscn" id="1_jie2m"]
-[ext_resource type="Texture2D" uid="uid://d36peyr00dppo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="2_65h7p"]
-[ext_resource type="Texture2D" uid="uid://bbtufhm0qw5eo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="3_5fe57"]
-[ext_resource type="Texture2D" uid="uid://bmvv1o5k1g6iu" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Golden-Tree.png" id="4_57t8h"]
-[ext_resource type="Texture2D" uid="uid://dq1cmx3kt2ppm" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Green-Tree.png" id="5_no4c2"]
-[ext_resource type="Texture2D" uid="uid://cpp5imfm2nhf8" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Red-Tree.png" id="6_evib2"]
-[ext_resource type="Texture2D" uid="uid://gqtel6n8upat" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="7_cg7th"]
-[ext_resource type="Texture2D" uid="uid://nx1mvs0yvpsw" path="res://assets/cave/background1.png" id="8_ncvlp"]
-[ext_resource type="Texture2D" uid="uid://qny8xapyl3ae" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="9_vtuh1"]
-[ext_resource type="Texture2D" uid="uid://dtwhhuradoiu3" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="10_rb6va"]
-[ext_resource type="Texture2D" uid="uid://ceuaw3lnalr3x" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="11_2te8w"]
-[ext_resource type="Texture2D" uid="uid://12nd32sosadk" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="12_02otd"]
-[ext_resource type="Texture2D" uid="uid://c2mh4hh5c77jk" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Base-01.png" id="13_8ottt"]
-[ext_resource type="Texture2D" uid="uid://bfjurkyjdjbj3" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Dark-Tree.png" id="14_a2niu"]
-[ext_resource type="PackedScene" uid="uid://b1oilxyj8np7p" path="res://scenes/killzone.tscn" id="15_hl77w"]
-[ext_resource type="FontFile" uid="uid://rciewpa3bp6j" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="16_yuq3p"]
-[ext_resource type="PackedScene" uid="uid://d2aottnxo7cig" path="res://coin.tscn" id="17_nntbj"]
-[ext_resource type="PackedScene" uid="uid://bo5e5d254hgnh" path="res://scenes/platform.tscn" id="18_wmqsp"]
-[ext_resource type="PackedScene" uid="uid://d2gk36r4romuq" path="res://scenes/Enemy.tscn" id="19_l02n5"]
-[ext_resource type="PackedScene" uid="uid://cf3caajv2w84i" path="res://hud.tscn" id="20_65h7p"]
+[ext_resource type="Script" uid="uid://wrol5ak5ofhb" path="res://game_manager.gd" id="1_cpsxm"]
+[ext_resource type="PackedScene" uid="uid://dq5g6xe000gds" path="res://player.tscn" id="2_hmewc"]
+[ext_resource type="Texture2D" uid="uid://d36peyr00dppo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="3_7ged1"]
+[ext_resource type="Texture2D" uid="uid://bbtufhm0qw5eo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="4_0mevm"]
+[ext_resource type="Texture2D" uid="uid://bmvv1o5k1g6iu" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Golden-Tree.png" id="5_w2501"]
+[ext_resource type="Texture2D" uid="uid://dq1cmx3kt2ppm" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Green-Tree.png" id="6_jsoai"]
+[ext_resource type="Texture2D" uid="uid://cpp5imfm2nhf8" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Red-Tree.png" id="7_bisgb"]
+[ext_resource type="Texture2D" uid="uid://gqtel6n8upat" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="8_y5ctq"]
+[ext_resource type="Texture2D" uid="uid://nx1mvs0yvpsw" path="res://assets/cave/background1.png" id="9_w7ht3"]
+[ext_resource type="Texture2D" uid="uid://qny8xapyl3ae" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="10_8ktx7"]
+[ext_resource type="Texture2D" uid="uid://dtwhhuradoiu3" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="11_hwsgv"]
+[ext_resource type="Texture2D" uid="uid://ceuaw3lnalr3x" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="12_gebyw"]
+[ext_resource type="Texture2D" uid="uid://12nd32sosadk" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="13_4my3f"]
+[ext_resource type="Texture2D" uid="uid://c2mh4hh5c77jk" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Base-01.png" id="14_aeq37"]
+[ext_resource type="Texture2D" uid="uid://bfjurkyjdjbj3" path="res://assets/Legacy-Fantasy - High Forest 2.3/Trees/Dark-Tree.png" id="15_suycs"]
+[ext_resource type="PackedScene" uid="uid://b1oilxyj8np7p" path="res://scenes/killzone.tscn" id="16_202ut"]
+[ext_resource type="FontFile" uid="uid://rciewpa3bp6j" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="17_5he1h"]
+[ext_resource type="PackedScene" uid="uid://d2aottnxo7cig" path="res://coin.tscn" id="18_xwkxq"]
+[ext_resource type="PackedScene" uid="uid://bo5e5d254hgnh" path="res://scenes/platform.tscn" id="19_wdm1y"]
+[ext_resource type="PackedScene" uid="uid://d2gk36r4romuq" path="res://scenes/Enemy.tscn" id="20_hxy8k"]
+[ext_resource type="PackedScene" uid="uid://cf3caajv2w84i" path="res://hud.tscn" id="21_hmewc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eow3j"]
-texture = ExtResource("2_65h7p")
+texture = ExtResource("3_7ged1")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -390,7 +391,7 @@ texture = ExtResource("2_65h7p")
 24:22/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5wjh"]
-texture = ExtResource("3_5fe57")
+texture = ExtResource("4_0mevm")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -678,7 +679,7 @@ texture = ExtResource("3_5fe57")
 18:23/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hb5m1"]
-texture = ExtResource("4_57t8h")
+texture = ExtResource("5_w2501")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -3647,7 +3648,7 @@ texture = ExtResource("4_57t8h")
 70:74/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x5p1p"]
-texture = ExtResource("5_no4c2")
+texture = ExtResource("6_jsoai")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -6616,7 +6617,7 @@ texture = ExtResource("5_no4c2")
 70:74/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhcbd"]
-texture = ExtResource("6_evib2")
+texture = ExtResource("7_bisgb")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -9585,7 +9586,7 @@ texture = ExtResource("6_evib2")
 70:74/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1jbl"]
-texture = ExtResource("7_cg7th")
+texture = ExtResource("8_y5ctq")
 7:0/0 = 0
 8:0/0 = 0
 11:0/0 = 0
@@ -10272,7 +10273,7 @@ texture = ExtResource("7_cg7th")
 55:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8heu"]
-texture = ExtResource("8_ncvlp")
+texture = ExtResource("9_w7ht3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -12075,7 +12076,7 @@ texture = ExtResource("8_ncvlp")
 59:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vef74"]
-texture = ExtResource("9_vtuh1")
+texture = ExtResource("10_8ktx7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -12588,7 +12589,7 @@ texture = ExtResource("9_vtuh1")
 29:16/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ryrav"]
-texture = ExtResource("10_rb6va")
+texture = ExtResource("11_hwsgv")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -13100,7 +13101,7 @@ texture = ExtResource("10_rb6va")
 8:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vaj68"]
-texture = ExtResource("3_5fe57")
+texture = ExtResource("4_0mevm")
 0:1/size_in_atlas = Vector2i(5, 4)
 0:1/0 = 0
 15:5/0 = 0
@@ -13325,7 +13326,7 @@ texture = ExtResource("3_5fe57")
 12:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2p71"]
-texture = ExtResource("10_rb6va")
+texture = ExtResource("11_hwsgv")
 10:0/0 = 0
 11:1/0 = 0
 11:2/0 = 0
@@ -13412,7 +13413,7 @@ texture = ExtResource("10_rb6va")
 13:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xa8c5"]
-texture = ExtResource("11_2te8w")
+texture = ExtResource("12_gebyw")
 1:0/0 = 0
 2:0/0 = 0
 4:0/0 = 0
@@ -13782,7 +13783,7 @@ texture = ExtResource("11_2te8w")
 11:20/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5b14r"]
-texture = ExtResource("12_02otd")
+texture = ExtResource("13_4my3f")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -14035,7 +14036,7 @@ texture = ExtResource("12_02otd")
 7:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bnpwn"]
-texture = ExtResource("13_8ottt")
+texture = ExtResource("14_aeq37")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -14385,7 +14386,7 @@ texture = ExtResource("13_8ottt")
 24:18/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_36jdj"]
-texture = ExtResource("14_a2niu")
+texture = ExtResource("15_suycs")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -17418,10 +17419,14 @@ _data = {
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vmtmt"]
 normal = Vector2(-1, 0)
 
-[node name="level0" type="Node" unique_id=38633801]
+[node name="Game" type="Node" unique_id=38633801]
 metadata/_edit_vertical_guides_ = [-614.0]
 
-[node name="player" parent="." unique_id=2057461835 instance=ExtResource("1_jie2m")]
+[node name="GameManager" type="Node" parent="." unique_id=58501966]
+unique_name_in_owner = true
+script = ExtResource("1_cpsxm")
+
+[node name="player" parent="." unique_id=2057461835 instance=ExtResource("2_hmewc")]
 position = Vector2(-209, -37)
 jump_force = -450.0
 
@@ -17429,10 +17434,18 @@ jump_force = -450.0
 position = Vector2(113, -27)
 zoom = Vector2(2, 2)
 limit_left = -333
-limit_top = -400
+limit_top = -300
 limit_right = 2000
 limit_bottom = 150
 position_smoothing_enabled = true
+
+[node name="HUD" parent="player" unique_id=1114078336 instance=ExtResource("21_hmewc")]
+z_index = 8
+offset_left = -52.0
+offset_top = -51.0
+offset_right = -52.0
+offset_bottom = -51.0
+scale = Vector2(0.5, 0.5)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=5656379]
 tile_set = SubResource("TileSet_be4hw")
@@ -17460,7 +17473,7 @@ position = Vector2(-300, -54)
 z_index = 5
 shape = SubResource("WorldBoundaryShape2D_b2p8l")
 
-[node name="killzone" parent="." unique_id=546331401 instance=ExtResource("15_hl77w")]
+[node name="killzone" parent="." unique_id=546331401 instance=ExtResource("16_202ut")]
 position = Vector2(92, 371)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=45163676]
@@ -17473,7 +17486,7 @@ offset_left = -309.0
 offset_top = -147.0
 offset_right = -42.0
 offset_bottom = -124.0
-theme_override_fonts/font = ExtResource("16_yuq3p")
+theme_override_fonts/font = ExtResource("17_5he1h")
 theme_override_font_sizes/font_size = 13
 text = "Press SPACEBAR to Jump"
 horizontal_alignment = 1
@@ -17485,7 +17498,7 @@ offset_left = 1375.0
 offset_top = -101.0
 offset_right = 1642.0
 offset_bottom = -70.0
-theme_override_fonts/font = ExtResource("16_yuq3p")
+theme_override_fonts/font = ExtResource("17_5he1h")
 theme_override_font_sizes/font_size = 13
 text = "Avoid the Enemies
 Press \"MRB\" to Attack"
@@ -17494,59 +17507,59 @@ vertical_alignment = 1
 
 [node name="Node" type="Node" parent="." unique_id=727354730]
 
-[node name="coin" parent="Node" unique_id=1504420054 instance=ExtResource("17_nntbj")]
+[node name="coin" parent="Node" unique_id=1504420054 instance=ExtResource("18_xwkxq")]
 z_index = 8
 position = Vector2(-61, -172)
 scale = Vector2(1.5, 1.5)
 
-[node name="coin2" parent="Node" unique_id=630143411 instance=ExtResource("17_nntbj")]
+[node name="coin2" parent="Node" unique_id=630143411 instance=ExtResource("18_xwkxq")]
 z_index = 8
 position = Vector2(84, -172)
 scale = Vector2(1.5, 1.5)
 
-[node name="coin3" parent="Node" unique_id=214038587 instance=ExtResource("17_nntbj")]
+[node name="coin3" parent="Node" unique_id=214038587 instance=ExtResource("18_xwkxq")]
 z_index = 8
 position = Vector2(15, -172)
 scale = Vector2(1.5, 1.5)
 
-[node name="coin4" parent="Node" unique_id=1878012826 instance=ExtResource("17_nntbj")]
+[node name="coin4" parent="Node" unique_id=1878012826 instance=ExtResource("18_xwkxq")]
 z_index = 8
 position = Vector2(428, -171)
 scale = Vector2(1.5, 1.5)
 
-[node name="coin5" parent="Node" unique_id=1425282921 instance=ExtResource("17_nntbj")]
+[node name="coin5" parent="Node" unique_id=1425282921 instance=ExtResource("18_xwkxq")]
 z_index = 8
 position = Vector2(503, -171)
 scale = Vector2(1.5, 1.5)
 
-[node name="coin6" parent="Node" unique_id=290349080 instance=ExtResource("17_nntbj")]
+[node name="coin6" parent="Node" unique_id=290349080 instance=ExtResource("18_xwkxq")]
 z_index = 8
 position = Vector2(737, -95)
 scale = Vector2(1.5, 1.5)
 
-[node name="coin8" parent="Node" unique_id=518303489 instance=ExtResource("17_nntbj")]
+[node name="coin8" parent="Node" unique_id=518303489 instance=ExtResource("18_xwkxq")]
 z_index = 8
 position = Vector2(847, -95)
 scale = Vector2(1.5, 1.5)
 
-[node name="coin10" parent="Node" unique_id=768955459 instance=ExtResource("17_nntbj")]
+[node name="coin10" parent="Node" unique_id=768955459 instance=ExtResource("18_xwkxq")]
 z_index = 8
 position = Vector2(1173, -95)
 scale = Vector2(1.5, 1.5)
 
-[node name="coin11" parent="Node" unique_id=851808487 instance=ExtResource("17_nntbj")]
+[node name="coin11" parent="Node" unique_id=851808487 instance=ExtResource("18_xwkxq")]
 z_index = 8
 position = Vector2(1289, -95)
 scale = Vector2(1.5, 1.5)
 
-[node name="platform" parent="." unique_id=2032553133 instance=ExtResource("18_wmqsp")]
+[node name="platform" parent="." unique_id=2032553133 instance=ExtResource("19_wdm1y")]
 position = Vector2(903, -7)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platform" unique_id=142036381]
 libraries/ = SubResource("AnimationLibrary_hb5m1")
 autoplay = &"Moving"
 
-[node name="Enemy" parent="." unique_id=2086360718 instance=ExtResource("19_l02n5")]
+[node name="Enemy" parent="." unique_id=2086360718 instance=ExtResource("20_hxy8k")]
 z_index = 9
 position = Vector2(1685, -24)
 
@@ -17556,22 +17569,3 @@ position = Vector2(2022, -147)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=461188274]
 z_index = 9
 shape = SubResource("WorldBoundaryShape2D_vmtmt")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=514024487]
-
-[node name="w" type="Control" parent="CanvasLayer" unique_id=2052950306]
-z_index = 10
-layout_mode = 3
-anchors_preset = 0
-offset_left = -329.0
-offset_top = -222.0
-offset_right = -289.0
-offset_bottom = -182.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/w" unique_id=475101935]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HUD" parent="CanvasLayer/w/VBoxContainer" unique_id=1540975850 instance=ExtResource("20_65h7p")]
-layout_mode = 2
