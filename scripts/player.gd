@@ -18,11 +18,15 @@ var attacking : bool = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: HitBox = $HitBox
 @onready var hit_box_collision: CollisionShape2D = $HitBox/CollisionShape2D
+@onready var hurt_box: HurtBox = $HurtBox
+@onready var hud = $HUD
 
 func _ready() -> void:
 	hit_box_collision.disabled = true
 	animated_sprite.animation_finished.connect(_on_animation_finished)
-
+	
+	hud.setup_health(hurt_box.healthPoints, hurt_box.healthPoints)
+	hurt_box.health_changed.connect(hud.update_health)
 
 
 func _physics_process(delta: float) -> void:

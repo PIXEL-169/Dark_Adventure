@@ -1,7 +1,7 @@
 extends Control
 
 
-@onready var health_bar: TextureProgressBar = $MarginContainer/VBoxContainer/HealthBar
+@onready var health_bar: TextureProgressBar = %HealthBar
 @onready var coin_counter: Label = %CoinCounter
 
 func _ready() -> void:
@@ -10,6 +10,14 @@ func _ready() -> void:
 		increase.score_changed.connect(_on_score_changed)
 		_on_score_changed(increase.score)
 		
+func setup_health(max_value: int, current: int) -> void:
+	health_bar.max_value = max_value
+	health_bar.value = current 
+
+func update_health(current: int) -> void:
+	var tween := create_tween()
+	tween.tween_property(health_bar, "value", current, 0.2)
+
 func _on_score_changed(value: int) -> void:
 	coin_counter.text = str(value)
 	

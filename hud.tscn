@@ -13,6 +13,7 @@ anchors_preset = 0
 script = ExtResource("1_a2258")
 
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1165379199]
+unique_name_in_owner = true
 custom_maximum_size = Vector2(200, 25)
 layout_mode = 0
 offset_left = -2.0
