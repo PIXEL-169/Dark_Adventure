@@ -17427,7 +17427,7 @@ unique_name_in_owner = true
 script = ExtResource("1_lfy8a")
 
 [node name="player" parent="." unique_id=2057461835 instance=ExtResource("2_ethxx")]
-position = Vector2(-209, -37)
+position = Vector2(-237, -28)
 jump_force = -450.0
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1666027694]

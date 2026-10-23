@@ -15,7 +15,6 @@ region = Rect2(17.978344, 37.067318, 100.12085, 10.050144)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_a2258")
-max_health = null
 
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1165379199]
 unique_name_in_owner = true
@@ -32,6 +31,7 @@ texture_progress = SubResource("AtlasTexture_b26j0")
 texture_progress_offset = Vector2(18, 52)
 
 [node name="Coin" type="TextureRect" parent="." unique_id=642749695]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(5, 0)
 custom_maximum_size = Vector2(15, 15)
 layout_mode = 0

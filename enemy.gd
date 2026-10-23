@@ -1,6 +1,10 @@
 extends Node2D
 class_name Enemy
 
+@onready var hud: Control = $HUD
+@onready var slime: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hurt_box: HurtBox = $HurtBox
+
 var direction : int = 1
 var is_dead : bool = false
 var is_hurted : bool = false
@@ -9,14 +13,14 @@ var start_x := position.x
 @export var speed = 150
 
 
-@onready var slime: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hurt_box: HurtBox = $HurtBox
-
 func _ready() -> void:
 	start_x = position.x
 	hurt_box.hurted.connect(_on_hurted)
 	hurt_box.died.connect(_on_died)
 	slime.animation_finished.connect(_on_animation_finished)
+	
+	hud.setup_health(hurt_box.healthPoints, hurt_box.healthPoints)
+	hurt_box.health_changed.connect(hud.update_health)
 
 func _process(delta: float) -> void:
 	if is_dead or is_hurted:
@@ -38,6 +42,7 @@ func _on_hurted() -> void:
 
 func _on_died() -> void:
 	is_dead = true
+	hud.hide()
 	slime.play("died")
 	
 func _on_animation_finished() -> void:

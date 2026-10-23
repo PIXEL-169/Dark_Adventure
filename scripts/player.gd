@@ -103,6 +103,7 @@ func _on_hurt_box_died() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO
 	hit_box.set_active(false)
+	hud.hide()
 	animated_sprite.play("Dead")
 	$Timer.start()
 
