@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bve4k81k1nnji"]
+
+[ext_resource type="Texture2D" uid="uid://usn3xqwk68rs" path="res://assets/cave/mainlev_build.png" id="1_1m5ts"]
+[ext_resource type="Script" uid="uid://cy4uha4ahm8gw" path="res://next_level.gd" id="1_bn2et"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
+size = Vector2(34, 54)
+
+[node name="next_level" type="Area2D" unique_id=987483651]
+script = ExtResource("1_bn2et")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1048543231]
+position = Vector2(-1, -33)
+texture = ExtResource("1_1m5ts")
+region_enabled = true
+region_rect = Rect2(961.0084, 16.279512, 45.98706, 64.17841)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1997497527]
+position = Vector2(-1, -29)
+shape = SubResource("RectangleShape2D_be4hw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

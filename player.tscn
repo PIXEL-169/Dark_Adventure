@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bgg3dukfgre5t" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Run/Run-Sheet.png" id="3_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://cboml80sjydqk" path="res://scenes/hurt_box.tscn" id="7_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://cbuidcq7t0qr" path="res://scenes/hit_box.tscn" id="8_dw050"]
+[ext_resource type="PackedScene" uid="uid://cf3caajv2w84i" path="res://hud.tscn" id="9_b26j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw050"]
 size = Vector2(20, 30)
@@ -347,7 +348,7 @@ size = Vector2(21, 39)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
 size = Vector2(46, 35)
 
-[node name="player" type="CharacterBody2D" unique_id=2057461835]
+[node name="player" type="CharacterBody2D" unique_id=2057461835 groups=["Player"]]
 z_index = 9
 script = ExtResource("1_onrkg")
 
@@ -383,6 +384,14 @@ debug_color = Color(0.93225557, 0.19648284, 0.44056606, 0.41960785)
 [node name="Timer" type="Timer" parent="." unique_id=872318745]
 wait_time = 2.0
 one_shot = true
+
+[node name="HUD" parent="." unique_id=1214506122 instance=ExtResource("9_b26j0")]
+z_index = 8
+offset_left = -57.0
+offset_top = -53.0
+offset_right = -57.0
+offset_bottom = -53.0
+scale = Vector2(0.5, 0.5)
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="died" from="HurtBox" to="." method="_on_hurt_box_died"]

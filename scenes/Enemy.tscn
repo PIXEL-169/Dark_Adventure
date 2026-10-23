@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://q2hcj4rnv7oo" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/slime_green.png" id="2_ft8do"]
 [ext_resource type="PackedScene" uid="uid://cboml80sjydqk" path="res://scenes/hurt_box.tscn" id="3_ft8do"]
 [ext_resource type="PackedScene" uid="uid://cbuidcq7t0qr" path="res://scenes/hit_box.tscn" id="4_5wwv6"]
+[ext_resource type="PackedScene" uid="uid://ds5nxlf0whmn6" path="res://health_bar.tscn" id="5_5wwv6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isvm2"]
 atlas = ExtResource("2_ft8do")
@@ -142,3 +143,10 @@ damage = 10
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_iwav8")
 debug_color = Color(0.93225557, 0.19648284, 0.44056606, 0.41960785)
+
+[node name="HealthBar" parent="." unique_id=1359067654 instance=ExtResource("5_5wwv6")]
+offset_left = -34.0
+offset_top = -28.0
+offset_right = -34.0
+offset_bottom = -28.0
+scale = Vector2(0.4, 0.4)

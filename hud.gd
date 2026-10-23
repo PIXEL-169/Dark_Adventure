@@ -1,10 +1,13 @@
 extends Control
 
-
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var coin_counter: Label = %CoinCounter
 
+@export var max_health = 100
+@export var active := true
+
 func _ready() -> void:
+	set_active(active)
 	var increase := get_tree().get_first_node_in_group("game_manager")
 	if increase:
 		increase.score_changed.connect(_on_score_changed)

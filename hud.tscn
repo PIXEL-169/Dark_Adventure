@@ -7,10 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://c7rntp51i26r3" path="res://assets/cave/PSD/Health Bar Asset Pack 2 by Adwit Rahman/greenbar (2).png" id="3_rftc2"]
 [ext_resource type="Script" uid="uid://c6mdrtsjjvcqw" path="res://coin_counter.gd" id="6_1xsix"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
+atlas = ExtResource("3_rftc2")
+region = Rect2(17.978344, 37.067318, 100.12085, 10.050144)
+
 [node name="HUD" type="Control" unique_id=1214506122]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_a2258")
+max_health = null
 
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1165379199]
 unique_name_in_owner = true
@@ -22,10 +27,9 @@ offset_right = 143.0
 offset_bottom = 9.0
 size_flags_vertical = 4
 value = 100.0
-rounded = true
 texture_under = ExtResource("2_1xsix")
-texture_progress = ExtResource("3_rftc2")
-texture_progress_offset = Vector2(0, 15)
+texture_progress = SubResource("AtlasTexture_b26j0")
+texture_progress_offset = Vector2(18, 52)
 
 [node name="Coin" type="TextureRect" parent="." unique_id=642749695]
 custom_minimum_size = Vector2(5, 0)
