@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://usn3xqwk68rs" path="res://assets/cave/mainlev_build.png" id="1_1m5ts"]
 [ext_resource type="Script" uid="uid://cy4uha4ahm8gw" path="res://next_level.gd" id="1_bn2et"]
+[ext_resource type="FontFile" uid="uid://rciewpa3bp6j" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_snqbe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4hw"]
 size = Vector2(34, 54)
@@ -18,5 +19,15 @@ region_rect = Rect2(961.0084, 16.279512, 45.98706, 64.17841)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1997497527]
 position = Vector2(-1, -29)
 shape = SubResource("RectangleShape2D_be4hw")
+
+[node name="Massage" type="Label" parent="." unique_id=272872002]
+offset_left = -341.0
+offset_top = -97.0
+offset_right = 27.0
+offset_bottom = -74.0
+theme_override_fonts/font = ExtResource("3_snqbe")
+theme_override_font_sizes/font_size = 12
+text = "fffffffffffffffffffffffffffffffffff"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

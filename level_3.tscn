@@ -27676,18 +27676,14 @@ script = ExtResource("1_dhf26")
 [node name="player" parent="." unique_id=2057461835 instance=ExtResource("2_ox7xt")]
 z_index = 10
 position = Vector2(-215, -155)
-speed = 250.0
-acceleration = 0.1
-deceleration = 0.1
 jump_force = -450.0
-decelerate_on_jump_release = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1498338639]
 position = Vector2(113, -27)
 zoom = Vector2(2, 2)
 limit_left = -260
-limit_top = -510
-limit_right = 9999999
+limit_top = -500
+limit_right = 2188
 limit_bottom = -15
 position_smoothing_enabled = true
 

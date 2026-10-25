@@ -100,7 +100,7 @@ animations = [{
 radius = 7.0
 height = 24.0
 
-[node name="coin" type="Area2D" unique_id=1504420054]
+[node name="coin" type="Area2D" unique_id=1504420054 groups=["coins"]]
 collision_layer = 2
 script = ExtResource("1_0t63x")
 

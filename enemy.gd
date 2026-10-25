@@ -14,6 +14,7 @@ var start_x := position.x
 
 
 func _ready() -> void:
+	add_to_group("slimes")
 	start_x = position.x
 	hurt_box.hurted.connect(_on_hurted)
 	hurt_box.died.connect(_on_died)
@@ -42,6 +43,7 @@ func _on_hurted() -> void:
 
 func _on_died() -> void:
 	is_dead = true
+	remove_from_group("slimes")
 	hud.hide()
 	slime.play("died")
 	
