@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cf3caajv2w84i" path="res://hud.tscn" id="9_b26j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dw050"]
-size = Vector2(20, 30)
+size = Vector2(20, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b88wv"]
 atlas = ExtResource("2_2hs0m")
@@ -354,7 +354,7 @@ script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312914040]
 z_index = 1
-position = Vector2(0, 9)
+position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_dw050")
 debug_color = Color(0, 0.5950001, 0.7, 0)
 

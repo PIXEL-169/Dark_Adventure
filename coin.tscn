@@ -95,8 +95,9 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_be4hw"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b26j0"]
 radius = 7.0
+height = 24.0
 
 [node name="coin" type="Area2D" unique_id=1504420054]
 collision_layer = 2
@@ -108,6 +109,6 @@ autoplay = "default"
 frame_progress = 0.0050165714
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1002147953]
-shape = SubResource("CircleShape2D_be4hw")
+shape = SubResource("CapsuleShape2D_b26j0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

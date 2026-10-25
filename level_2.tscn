@@ -27555,6 +27555,10 @@ _data = {
 &"moving": SubResource("Animation_hycyb")
 }
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b2p8l"]
+a = Vector2(0, -278)
+b = Vector2(-1, 83)
+
 [node name="level2" type="Node2D" unique_id=491534641]
 
 [node name="GameManager" type="Node" parent="." unique_id=511271065]
@@ -27767,3 +27771,11 @@ autoplay = &"moving"
 [node name="next_level" parent="." unique_id=987483651 instance=ExtResource("29_uos5d")]
 z_index = 8
 position = Vector2(3541, -124)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=606846796]
+z_index = 9
+position = Vector2(895, -2101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1757461417]
+position = Vector2(-440, 0)
+shape = SubResource("SegmentShape2D_b2p8l")
