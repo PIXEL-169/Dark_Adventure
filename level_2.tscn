@@ -27567,7 +27567,11 @@ script = ExtResource("1_d4rhq")
 
 [node name="player" parent="." unique_id=2057461835 instance=ExtResource("2_ldfcd")]
 position = Vector2(-205, -2046)
+speed = 250.0
+acceleration = 0.1
+deceleration = 0.1
 jump_force = -450.0
+decelerate_on_jump_release = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=353986333]
 position = Vector2(113, -27)

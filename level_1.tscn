@@ -17428,7 +17428,11 @@ script = ExtResource("1_lfy8a")
 
 [node name="player" parent="." unique_id=2057461835 instance=ExtResource("2_ethxx")]
 position = Vector2(-237, -28)
+speed = 250.0
+acceleration = 0.1
+deceleration = 0.1
 jump_force = -450.0
+decelerate_on_jump_release = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1666027694]
 position = Vector2(113, -27)

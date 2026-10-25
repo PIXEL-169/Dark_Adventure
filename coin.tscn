@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnq7pm46s4ce6" path="res://coin.gd" id="1_0t63x"]
 [ext_resource type="Texture2D" uid="uid://b0312n3mqit00" path="res://assets/coin.png" id="1_d5gmh"]
+[ext_resource type="AudioStream" uid="uid://dsav78v6evt32" path="res://sounds/coin.wav" id="3_v7riw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0t63x"]
 atlas = ExtResource("1_d5gmh")
@@ -110,5 +111,8 @@ frame_progress = 0.0050165714
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1002147953]
 shape = SubResource("CapsuleShape2D_b26j0")
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="." unique_id=953323664]
+stream = ExtResource("3_v7riw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,12 +2,12 @@ extends CharacterBody2D
 class_name PLAYER
 
 
-@export var speed = 250.0
-@export_range(0, 1) var acceleration = 0.1 
-@export_range(0, 1) var deceleration = 0.1
+@export var speed: float = 250.0
+@export_range(0, 1) var acceleration: float = 0.1 
+@export_range(0, 1) var deceleration: float = 0.1
 
-@export var jump_force = -350.0
-@export_range(0, 1) var decelerate_on_jump_release = 0.5
+@export var jump_force: float = -350.0
+@export_range(0, 1) var decelerate_on_jump_release: float = 0.5
 
 var hit_frame_start: int = 1
 var hit_frame_end: int = 6
@@ -20,6 +20,9 @@ var attacking : bool = false
 @onready var hit_box_collision: CollisionShape2D = $HitBox/CollisionShape2D
 @onready var hurt_box: HurtBox = $HurtBox
 @onready var hud = $HUD
+@onready var attacksound: AudioStreamPlayer2D = $attacksound
+@onready var jumpsound: AudioStreamPlayer2D = $jumpsound
+@onready var walksound: AudioStreamPlayer2D = $walksound
 
 func _ready() -> void:
 	hit_box_collision.disabled = true
@@ -39,6 +42,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = jump_force
+		jumpsound.play()
 		
 	
 	if Input.is_action_just_released("Jump") and velocity.y < 0:
@@ -78,19 +82,25 @@ func start_attack() -> void:
 	if attacking:
 		return
 	attacking = true
+	attacksound.play()
 	animated_sprite.play("attack")
 
 func _on_animated_sprite_2d_frame_changed() -> void:
-	if not animated_sprite: return
+	if not animated_sprite or is_dead:
+		return
 	
-	var attackAnimation = animated_sprite.animation == "attack"
+	var anim_name = animated_sprite.animation
 	var frame = animated_sprite.frame
 	
-	if attackAnimation:
+	if anim_name == "attack":
 		if frame == 1:
 			hit_box.set_active(true)
 		elif frame == 6:
 			hit_box.set_active(false)
+	elif anim_name == "run" and is_on_floor():
+		if frame == 0 or frame == 7:
+			walksound.pitch_scale = randf_range(0.9, 1.1)
+			walksound.play()
 	
 func _on_animation_finished() -> void:
 	if animated_sprite.animation == "attack":

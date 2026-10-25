@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cboml80sjydqk"]
 
 [ext_resource type="Script" uid="uid://ccanfbih8cd7q" path="res://scripts/hurt_box.gd" id="1_6dlxb"]
+[ext_resource type="AudioStream" uid="uid://dsspp6bmllbun" path="res://sounds/hurt.wav" id="2_1wup7"]
 
 [node name="HurtBox" type="Area2D" unique_id=1716629274]
 script = ExtResource("1_6dlxb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1773278209]
+stream = ExtResource("2_1wup7")
+volume_db = -8.0
