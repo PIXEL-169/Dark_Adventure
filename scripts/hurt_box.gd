@@ -19,7 +19,6 @@ func get_damage(value: int) -> void:
 
 	healthPoints = max(healthPoints - value, 0)
 	health_changed.emit(healthPoints)
-	print(healthPoints)
 	
 	if healthPoints <= 0:
 		is_dead = true
