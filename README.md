@@ -27,6 +27,8 @@ sound Effects
 - [Brackeys' Platformer Bundle by Brakeys](https://brackeysgames.itch.io/brackeys-platformer-bundle)
 - [HealthBar Assets by adwitr](https://adwitr.itch.io/pixel-health-bar-asset-pack-2)
 - Sound effects: made with [jsfxr](https://sfxr.me) and by [Brackeys' Platformer Bundle by Brakeys](https://brackeysgames.itch.io/brackeys-platformer-bundle) and [freesound.org](https://freesound.org)
+
+- I'd like to thank my friend Adam for supporting me❤ [Adom](https://github.com/ExcitedAdom)
   
 I wouldn't finish my game without the help of these people.
 _____________________________________________________________________________________________________________________________________________________________
